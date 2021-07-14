@@ -3,10 +3,10 @@ function init(){
     var dropdownMenu = d3.select("#selDataset");
 
     // I'm using d3 library ro read sample.json
-    d3.json("./data/samples.json").then((data) => {
+    d3.json("./samples.json").then((data) => {
         console.log(data);
         var names = data.names;
-        data = fetch("./data/samples.json")
+        data = fetch("./samples.json")
 
         names.forEach((sample) => {
             dropdownMenu.append("option")
@@ -28,7 +28,7 @@ function optionChanged(new_name) {
 }
 
 function build_barchart(sample){
-    d3.json("./data/samples.json").then((data) => {
+    d3.json("./samples.json").then((data) => {
         console.log(data);
         var samples = data.samples;
         var sample2 = samples.filter(sampleID => sampleID.id == sample);
@@ -57,7 +57,7 @@ function build_barchart(sample){
 }
 
 function build_bubble(sample) {
-    d3.json("./data/samples.json").then((data) => {
+    d3.json("./samples.json").then((data) => {
         console.log(data);
         var samples = data.samples;
         var sample2 = samples.filter(sampleID => sampleID.id == sample);
@@ -91,7 +91,7 @@ function build_bubble(sample) {
 }
 
 function build_meta(sample) {
-    d3.json("./data/samples.json").then((data) => {
+    d3.json("./samples.json").then((data) => {
         console.log(data);
         var samples = data.samples;
         var sample3 = samples.filter(sampleID => sampleID.id == sample);
